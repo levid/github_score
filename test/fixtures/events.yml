@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  actor: 
+  payload: MyText
+  public: false
+  repository: MyString
+  type: 
+  url: MyText
+
+two:
+  actor: 
+  payload: MyText
+  public: false
+  repository: MyString
+  type: 
+  url: MyText
