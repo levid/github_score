@@ -2,7 +2,7 @@ require_dependency "github_loader"
 
 class Event < ActiveRecord::Base
   belongs_to :actor
-  attr_accessible :payload, :public, :repository, :event_type, :url
+  attr_accessible :payload, :public, :repository, :event_type, :url, :username
 
   def self.create_from_stream(username, events)
     return if events.empty?

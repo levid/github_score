@@ -1,14 +1,13 @@
 GithubScore.Router = Ember.Router.extend({
+  initialState: 'root',
   root: Ember.State.extend({
+    initialState: 'index',
     index: Ember.State.extend({
-      route: '/'
-
-      // You'll likely want to connect a view here.
-      // connectOutlets: function(router) {
-      //   router.get('applicationController').connectOutlet(App.MainView);
-      // }
-
-      // Layout your routes here...
+      route: '/',
+      connectOutlets: function(router) {
+        console.log(router);
+        router.get('eventsController').connectOutlet('main');
+      }
     })
   })
 });

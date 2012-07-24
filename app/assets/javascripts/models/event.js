@@ -1,8 +1,14 @@
 GithubScore.Event = DS.Model.extend({
-  actor: DS.attr('references'),
-  payload: DS.attr('string'),
-  public: DS.attr('boolean'),
+  username: DS.attr('string'),
+  public: DS.attr('string'),
   repository: DS.attr('string'),
-  type: DS.attr('string'),
-  url: DS.attr('string')
+  eventType: DS.attr('string'),
+  url: DS.attr('string'),
+  actor: DS.belongsTo("GithubScore.Actor"),
+  payload: DS.attr('string'),
+
+  payloadObject: function() {
+    return JSON.parse(this.get('payload'));
+  }.property('payload').cacheable()
+
 });

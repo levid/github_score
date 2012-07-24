@@ -6,5 +6,5 @@ GithubScore.Actor = DS.Model.extend({
   location: DS.attr('string'),
   login: DS.attr('string'),
   name: DS.attr('string'),
-  type: DS.attr('string')
+  actorType: DS.attr('string')
 });
