@@ -5,9 +5,9 @@ GithubScore.Router = Ember.Router.extend({
     index: Ember.State.extend({
       route: '/',
       connectOutlets: function(router) {
-        return router.get('eventsController').connectOutlet(GithubScore.UsernameSearchView);
+        console.log("ready");
+        router.get('eventsController').connectOutlet(GithubScore.UsernameSearchView);
       }
     })
   })
 });
-
