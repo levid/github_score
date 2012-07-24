@@ -17,6 +17,7 @@
 //= require ember-data
 //= require_self
 //= require github_score
+
 GithubScore = Ember.Application.create({
   ready: function() {
     // After 3 seconds transition to the 'tasks.show' state
@@ -24,9 +25,14 @@ GithubScore = Ember.Application.create({
       console.log("test");
       // GithubScore.get('stateManager').transitionTo('show');
     }, 3000);
+    //
+    // console.log(GithubScore);
+
+    // GithubScore.initialize(GithubScore.router);
+
+    // GithubScore.initialize();
   }
 });
-//= require_tree .
 
 GithubScore.displayError = function(e) {
   if (typeof e === 'string') {
@@ -41,3 +47,5 @@ GithubScore.displayError = function(e) {
     alert("An unexpected error occurred.");
   }
 };
+
+//= require_tree .

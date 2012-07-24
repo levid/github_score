@@ -4,6 +4,4 @@ GithubScore.EventsController = Ember.ArrayController.extend({
   // An ArrayController has a `content` property, which you should
   // set up in your router.
 
-
 });
-

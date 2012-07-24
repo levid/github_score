@@ -1,7 +1,7 @@
 <div>
 <label for="username">Username</label>
-{{view GithubScore.UsernameSearchView id="username" valueBinding="controller.username"}}
-</div>
+{{#view GithubScore.UsernameSearchView id="username" valueBinding="controller.username"}}
+
 
 {{#if controller.content}}
   <ul>
@@ -12,3 +12,7 @@
 {{else}}
   Please enter a user
 {{/if}}
+
+</div>
+
+{{/view}}

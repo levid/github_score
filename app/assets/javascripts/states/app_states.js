@@ -15,17 +15,18 @@ GithubScore.StateManager = Ember.StateManager.extend({
         });
 
         manager.set('store', store);
+        manager.goToState('waitingForInput');
 
         var view = Ember.View.create({
           controller: manager.get('eventsController'),
           templateName: 'main'
         }).append();
 
-        manager.goToState('waitingForInput');
+        // view.appendTo('#wrapper');
       }
     }),
     waitingForInput: Ember.State.extend({
-      populateEvents: function(manager, username){
+      populateEvents: function(manager, username) {
         var events = GithubScore.Event.find({ username: username });
         manager.get('eventsController').set('content', events)
       }
