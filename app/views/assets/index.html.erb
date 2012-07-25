@@ -2,10 +2,6 @@
 <html>
 <head>
   <title>Github Score</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
   <script type="text/javascript" >
       ENV = {
           CP_DEFAULT_CACHEABLE: true,
@@ -13,5 +9,16 @@
       };
   </script>
   <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <script type="text/x-handlebars">
+    {{ view GithubScore.ApplicationView }}
+  </script>
+
+  <%= yield %>
+
 </body>
 </html>

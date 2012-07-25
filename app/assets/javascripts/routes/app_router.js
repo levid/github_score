@@ -1,24 +1,18 @@
 GithubScore.Router = Ember.Router.extend({
-  enableLogging: true,
-  location: 'hash',
   initialState: 'root',
-
   root: Ember.State.extend({
     initialState: 'index',
-    setupControllers: function(router) {
-      var applicationController = router.get('applicationController'),
-      rootView;
-
-      rootView = Ember.ContainerView.create({
-        controller: applicationController,
-        currentViewBinding: 'controller.view'
-      });
-
-      rootView.appendTo('#content');
-    },
     index: Ember.State.extend({
       route: '/',
-      redirectsTo: 'main.index'
+      redirectsTo: 'main',
+
+      // You'll likely want to connect a view here.
+      connectOutlets: function(router) {
+        console.log("In Root");
+        var appController = router.get('applicationController');
+        appController.connectOutlet(EmberRailsTestNew.ApplicationView);
+      }
+      // Layout your routes here...
     }),
     main: Ember.State.extend({
       route: '/main',
@@ -29,13 +23,14 @@ GithubScore.Router = Ember.Router.extend({
       },
 
       index: Ember.State.extend({
-        route: '/'
-      }),
+        route: '/',
 
-      connectOutlets: function(router) {
-        // GithubScore.EventsController.set('content', 'test');
-        router.get('eventsController').connectOutlet('main', GithubScore.UsernameSearchView);
-      }
+        connectOutlets: function(router) {
+          console.log("In Home");
+          var appController = router.get('homeController');
+          appController.connectOutlet('main');
+        },
+      })
     })
   })
 });
