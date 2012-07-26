@@ -1,18 +1,5 @@
-<div>
-<label for="username">Username</label>
-{{#view GithubScore.UsernameSearchView id="username" valueBinding="controller.username"}}
-
-
-{{#if controller.content}}
-  <ul>
-  {{#each controller}}
-    <li>{{url}}: {{eventType}}</li>
-  {{/each}}
-  </ul>
-{{else}}
-  Please enter a user
-{{/if}}
-
+<h1>Events</h1>
+{{view GithubScore.NavbarView controllerBinding="controller.controllers.navbarController"}}
+<div class="content">
+  {{outlet}}
 </div>
-
-{{/view}}

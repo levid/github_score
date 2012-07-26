@@ -1,9 +1,14 @@
 <div>
 <label for="username">Username</label>
+</div>
 
+{{view GithubScore.UsernameSearchView controllerBinding="controller.controllers.eventsController"}}
 
-
+<div>
 {{#if controller.content}}
+  {{#if controller.username}}
+    <h1>{{controller.username}}'s Score: {{controller.score}}</h1>
+  {{/if}}
   <ul>
   {{#each controller}}
     <li>{{url}}: {{eventType}}</li>
@@ -12,5 +17,4 @@
 {{else}}
   Please enter a user
 {{/if}}
-
 </div>
