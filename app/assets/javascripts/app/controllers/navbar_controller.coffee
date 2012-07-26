@@ -1,0 +1,1 @@
+GithubScore.NavbarController = Ember.Controller.extend({})
