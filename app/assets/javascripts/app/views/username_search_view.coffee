@@ -1,5 +1,6 @@
 GithubScore.UsernameSearchView = Ember.TextField.extend
-  templateName: "main"
+  templateName: "app/templates/main"
+
   insertNewline: ->
     username = @get("value")
-    @get("stateManager").send "populateEvents", username
+    @get("router").send "populateEvents", username

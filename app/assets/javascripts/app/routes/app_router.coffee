@@ -6,6 +6,7 @@ GithubScore.Router = Ember.Router.extend(
     # EVENTS
     goHome: Ember.Route.transitionTo("home")
     viewProfile: Ember.Route.transitionTo("profile.index")
+    viewEvents: Ember.Route.transitionTo("events.index")
 
     # STATES
     home: Ember.Route.extend(
@@ -16,6 +17,16 @@ GithubScore.Router = Ember.Router.extend(
         #appController.connectOutlet('navbar', App.NavbarView);
         appController.connectOutlet "home"
     )
+    # STATES
+    events: Ember.Route.extend(
+      route: "/events"
+      index: Ember.Route.extend
+        route: "/"
+        connectOutlets: (router, context) ->
+          eventsController = router.get("applicationController")
+          eventsController.connectOutlet 'usernameSearch'
+          Ember.Route.transitionTo("waitingForInput")
+    )
     profile: Ember.Route.extend(
       route: "/profile"
       redirectTo: 'index'
@@ -24,7 +35,7 @@ GithubScore.Router = Ember.Router.extend(
 
       index: Ember.Route.extend
         route: "/"
-        connectOutlets: (manager) ->
+        connectOutlets: (router, context) ->
           console.log('index')
 
       # EVENTS
@@ -43,5 +54,11 @@ GithubScore.Router = Ember.Router.extend(
           router.get("profileController").connectOutlet "photos"
       )
     )
+    waitingForInput: Ember.Route.extend(
+      populateEvents: (router, username) ->
+        events = GithubScore.Event.find(username: username)
+        router.get("eventsController").set "content", events
+    )
   )
 )
+
