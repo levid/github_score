@@ -8,3 +8,7 @@ GithubScore.Actor = DS.Model.extend({
   name: DS.attr('string'),
   actorType: DS.attr('string')
 });
+
+GithubScore.Actor.reopenClass({
+  url: 'actor'
+});

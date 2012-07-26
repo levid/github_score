@@ -12,8 +12,9 @@ var router = GithubScore.router = GithubScore.Router.create({
   location: 'hash'
 });
 
-GithubScore.initialize(router);
+GithubScore.mainView.appendTo('body');
 
+GithubScore.initialize(router);
 
 // var stateManager = GithubScore.stateManager = GithubScore.StateManager.create();
 // GithubScore.injectControllers(stateManager);

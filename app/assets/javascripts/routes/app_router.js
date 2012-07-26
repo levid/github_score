@@ -1,10 +1,11 @@
+GithubScore.mainView = GithubScore.ApplicationView.create()
+
 GithubScore.Router = Ember.Router.extend({
   initialState: 'root',
   root: Ember.State.extend({
     initialState: 'index',
     index: Ember.State.extend({
       route: '/',
-      redirectsTo: 'main',
 
       // You'll likely want to connect a view here.
       connectOutlets: function(router) {
@@ -31,6 +32,12 @@ GithubScore.Router = Ember.Router.extend({
           appController.connectOutlet('main');
         },
       })
+    }),
+    waitingForInput: Ember.State.extend({
+      populateEvents: function(manager, username) {
+        var events = GithubScore.Event.find({ username: username });
+        manager.get('eventsController').set('content', events)
+      }
     })
   })
 });

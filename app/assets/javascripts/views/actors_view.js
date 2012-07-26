@@ -1,3 +1,4 @@
 GithubScore.ActorsView = Ember.View.extend({
-  templateName: 'actors'
+  templateName: 'actors',
+  actorBinding: GithubScore.ActorsController
 });

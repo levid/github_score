@@ -12,3 +12,7 @@ GithubScore.Event = DS.Model.extend({
   }.property('payload').cacheable()
 
 });
+
+GithubScore.Event.reopenClass({
+  url: 'event'
+});
