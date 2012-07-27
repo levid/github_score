@@ -6,4 +6,3 @@ GithubScore.Store = DS.Store.extend({
     }
   })
 });
-

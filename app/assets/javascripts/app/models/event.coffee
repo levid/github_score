@@ -1,5 +1,4 @@
 GithubScore.Event = DS.Model.extend
-  username: DS.attr("string")
   public: DS.attr("string")
   repository: DS.attr("string")
   eventType: DS.attr("string")

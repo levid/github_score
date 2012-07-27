@@ -7,18 +7,19 @@ GithubScore.EventsController = Ember.ArrayController.extend
 
   score: (->
     score = 0
-
     @forEach ((event) ->
       score += @scoreFor(event)
     ), this
-
     score
   ).property("@each.eventType")
 
   username: (->
     firstEvent = @objectAt(0)
-    firstEvent.getPath "actor.login"  if firstEvent
-    firstEvent
+    if firstEvent
+      firstEvent.getPath("actor.login")
+      firstEvent
+    else
+      firstEvent
   ).property("@each").cacheable()
 
   scoreFor: (event) ->

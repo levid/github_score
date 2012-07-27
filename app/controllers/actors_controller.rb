@@ -16,6 +16,7 @@ class ActorsController < ApplicationController
 
 private
   def by_username(username)
+
     actor = Actor.find_by_login(username) || begin
       json = GithubLoader.new.events_for(URI.escape(username))
 
