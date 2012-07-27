@@ -26,13 +26,13 @@ GithubScore.Router = Ember.Router.extend(
         route: "/"
 
         connectOutlets: (router, context) ->
-          # eventsController = router.get("applicationController")
-          # eventsController.connectOutlet 'usernameSearch'
-
-          view = Ember.View.create(
-            controller: router.get("eventsController")
-            templateName: "app/templates/main"
-          ).append()
+          eventsController = router.get("applicationController")
+          eventsController.connectOutlet 'events'
+          #
+          # GithubScore.EventsView = Ember.View.create(
+          #   controller: router.get("eventsController")
+          #   templateName: "app/templates/main"
+          # ).append()
     )
 
     profile: Ember.Route.extend(
