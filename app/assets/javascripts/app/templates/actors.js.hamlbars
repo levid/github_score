@@ -1,0 +1,7 @@
+%h1 Actors
+%p Your content here.
+%ul
+  {{#each actor}}
+  %li {{name}}
+  {{/each}}
+{{outlet}}

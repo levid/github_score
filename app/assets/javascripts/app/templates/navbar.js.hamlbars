@@ -1,0 +1,8 @@
+%div
+  %ul
+    %li
+      %a{:event => {:action => 'goHome'}} Home
+    %li
+      %a{:event => {:action => 'viewProfile'}} My Profile
+    %li
+      %a{:event => {:action => 'viewEvents'}} Users

@@ -1,6 +1,6 @@
 class ActorsController < ApplicationController
   def index
-    actor = by_username(params[:username])
+    actor = by_username(params[:username] || params[:login])
 
     unless actor
       render :json => [].to_json

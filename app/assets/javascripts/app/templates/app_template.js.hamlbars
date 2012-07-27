@@ -1,5 +1,4 @@
-<h1>My Ember Application</h1>
+%h1 My Ember Application
 {{view GithubScore.NavbarView controllerBinding="controller.controllers.navbarController"}}
-<div class="content">
+.content
   {{outlet}}
-</div>

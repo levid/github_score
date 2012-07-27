@@ -1,0 +1,7 @@
+Check out my profile!
+%ul
+  %li
+    <a {{action viewPosts}}>Posts
+  %li
+    <a {{action viewPhotos}}>Photos
+{{outlet}}
