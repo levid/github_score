@@ -1,4 +1,5 @@
 GithubScore.Actor = DS.Model.extend
+  username: DS.attr("string")
   blog: DS.attr("string")
   company: DS.attr("string")
   email: DS.attr("string")

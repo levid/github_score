@@ -33,4 +33,3 @@ Ember.Application.reopen({
     });
   }
 });
-

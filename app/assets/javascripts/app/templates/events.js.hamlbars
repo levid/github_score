@@ -3,6 +3,7 @@
 {{view GithubScore.UsernameSearchView controllerBinding="controller.controllers.eventsController"}}
 %div
   {{#if controller.content}}
+
   {{#if controller.username}}
   %h1 {{controller.username}}'s Score: {{controller.score}}
   {{/if}}
@@ -10,6 +11,8 @@
     {{#each controller}}
     %li {{id}} - {{url}}: {{eventType}}
     {{/each}}
+
   {{else}}
   Please enter a user
   {{/if}}
+
