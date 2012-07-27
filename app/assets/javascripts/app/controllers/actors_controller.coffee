@@ -1,4 +1,11 @@
-GithubScore.ActorsController = Ember.ArrayController.extend({})
+GithubScore.ActorsController = Ember.ArrayController.extend
+  content: []
+  init: ->
+    console.log "actors controller started"
+
+  actors: (->
+    GithubScore.Actor.find({username: 'wycats'})
+  ).property("@each").cacheable()
 
 # Implement your controller here.
 #

@@ -5,4 +5,6 @@
     %li
       %a{:event => {:action => 'viewProfile'}} My Profile
     %li
-      %a{:event => {:action => 'viewEvents'}} Users
+      %a{:event => {:action => 'viewEvents'}} Events
+    %li
+      %a{:event => {:action => 'viewActors'}} Actors

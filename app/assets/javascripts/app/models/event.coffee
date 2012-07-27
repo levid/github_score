@@ -9,4 +9,5 @@ GithubScore.Event = DS.Model.extend
     JSON.parse @get("payload")
   ).property("payload").cacheable()
 
-GithubScore.Event.reopenClass url: "event"
+GithubScore.Event.reopenClass
+  url: "event"

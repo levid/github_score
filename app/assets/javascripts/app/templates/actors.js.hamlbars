@@ -1,7 +1,6 @@
 %h1 Actors
-%p Your content here.
 %ul
-  {{#each actor}}
+  {{#each controller.actors}}
   %li {{name}}
   {{/each}}
 {{outlet}}

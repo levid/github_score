@@ -7,6 +7,7 @@ GithubScore.Router = Ember.Router.extend(
     goHome: Ember.Route.transitionTo("home")
     viewProfile: Ember.Route.transitionTo("profile.index")
     viewEvents: Ember.Route.transitionTo("events.index")
+    viewActors: Ember.Route.transitionTo("actors.index")
 
     # STATES
     home: Ember.Route.extend(
@@ -18,7 +19,6 @@ GithubScore.Router = Ember.Router.extend(
         appController.connectOutlet "home"
     )
 
-    # STATES
     events: Ember.Route.extend(
       route: "/events"
 
@@ -28,6 +28,28 @@ GithubScore.Router = Ember.Router.extend(
         connectOutlets: (router, context) ->
           eventsController = router.get("applicationController")
           eventsController.connectOutlet 'events'
+          #
+          # GithubScore.EventsView = Ember.View.create(
+          #   controller: router.get("eventsController")
+          #   templateName: "app/templates/main"
+          # ).append()
+
+        enter: ->
+          Ember.run.next ->
+            console.log "events loaded"
+        exit: ->
+          console.log "events removed"
+    )
+
+    actors: Ember.Route.extend(
+      route: "/actors"
+
+      index: Ember.Route.extend
+        route: "/"
+
+        connectOutlets: (router, context) ->
+          actorsController = router.get("applicationController")
+          actorsController.connectOutlet 'actors'
           #
           # GithubScore.EventsView = Ember.View.create(
           #   controller: router.get("eventsController")

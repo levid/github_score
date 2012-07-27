@@ -10,4 +10,5 @@ GithubScore.Actor = DS.Model.extend
   actorType: DS.attr("string")
   events: DS.hasMany("GithubScore.Event")
 
-GithubScore.Actor.reopenClass url: "actor"
+GithubScore.Actor.reopenClass
+  url: "actor"
