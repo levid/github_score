@@ -1,6 +1,35 @@
 %h1 Actors
 %ul
   {{#each controller.actors}}
-  %li {{name}}
+  %li
+    Name:
+    %strong {{name}}
+  %li
+    Username:
+    %strong {{login}}
+  %li
+    Blog:
+    %strong {{blog}}
+  %li
+    Company:
+    %strong {{company}}
+  %li
+    Email:
+    %strong {{email}}
+  %li
+    Gravatar ID:
+    %strong {{gravatarId}}
+  %li
+    Location:
+    %strong {{location}}
+  %li
+    Name:
+    %strong {{name}}
+  %li
+    Actor Type:
+    %strong {{actorType}}
+  %li
+    Events:
+    %strong {{events}}
   {{/each}}
 {{outlet}}
