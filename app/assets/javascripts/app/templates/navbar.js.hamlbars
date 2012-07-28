@@ -1,4 +1,4 @@
-%div
+%div.navbar
   %ul
     %li
       %a{:event => {:action => 'goHome'}} Home
