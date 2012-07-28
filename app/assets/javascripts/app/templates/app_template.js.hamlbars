@@ -1,4 +1,9 @@
 %h1 My Ember Application
+{{view GithubScore.LogoView}}
+
 {{view GithubScore.NavbarView controllerBinding="controller.controllers.navbarController"}}
+
 .content
   {{outlet}}
+
+{{view GithubScore.FooterView}}
